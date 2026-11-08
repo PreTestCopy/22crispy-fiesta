@@ -10,7 +10,6 @@ import {
 
 const createProductSchema = z.object({
   name: z.string().trim().min(1).max(200),
-  description: z.string().trim().max(2000).optional(),
   price: z.number().finite().nonnegative(),
 });
 
@@ -30,7 +29,6 @@ productsRouter.post("/", requireAuth, (req, res) => {
   const product = createProduct({
     name: parsed.data.name,
     description: parsed.data.description ?? "",
-    price: parsed.data.price,
     createdBy: user.id,
   });
   res.status(201).json({ product });
