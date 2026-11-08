@@ -64,8 +64,6 @@ export function createProduct(input: {
     id: randomUUID(),
     name: input.name,
     description: input.description,
-    price: input.price,
-    createdBy: input.createdBy,
     createdAt: new Date().toISOString(),
   };
   products.set(product.id, product);
