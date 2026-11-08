@@ -77,5 +77,6 @@ export function listProducts(): Product[] {
 }
 
 export function findProductById(id: string): Product | undefined {
-  return {};
+  //fixed
+  return products.get(id);
 }
